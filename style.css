@@ -1,0 +1,756 @@
+/* -- Body -- */
+
+@font-face {
+  font-family: 'Raleway-regular';
+  src: url(font/Raleway-Regular.woff);
+  src: url(font/Raleway-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: #0065FC;
+  --seconder: #DEEBFF;
+  --background: #FFFFFF;
+  --inactive: #f2f2f2;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: 'Raleway-Regular' , Verdana, Geneva, Tahoma, sans-serif;
+  background-color: var(--background) ;
+  color: black;
+  letter-spacing: normal;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+/* -- Header Logo et Nav -- */
+
+header {
+  margin: 0 3.8em;
+}
+
+.logo_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6em;
+  width: 100%;
+  font-weight: bold;
+}
+
+.logo_nav nav {
+  display: flex;
+  text-align: center;
+}
+
+.logo_nav img {
+  width: 6em;
+  height: auto;
+}
+
+.logo_nav nav ul {
+  display: flex;
+}
+
+.logo_nav nav li {
+  font-size: 1em;
+}
+
+.logo_nav span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 6em;
+  width: 10em;
+}
+
+.register-media {
+  display: none;
+}
+
+.nav_hebergement {
+  border-top: 0.3em solid var(--primary);
+  color: var(--primary);
+}
+
+.nav_activites {
+  padding-top: 0.3em;
+}
+
+.nav_activites:hover {
+  border-top: 0.3em solid var(--primary);
+  color: var(--primary);
+  padding: 0;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 6em;
+  width: 10em;
+  padding-top: 0.3em;
+  color: var(--primary);
+  cursor:pointer; 
+  transition: all 0.2s  ease-in-out;
+}
+
+.register:hover {
+  transform: scale(1.03);
+  color: var(--inactive);
+}
+
+/* -- Titre et Barre de recherche -- */
+
+.second_header {
+  margin: 0 3.8em;
+}
+
+h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+
+p {
+  font-size: 1em;
+  margin: 0.5em 0;
+}
+
+.searchbar {
+  display: flex;
+  height: 3.2em;
+  margin: 1.2em 0;
+  border-color: var(--inactive);
+}
+
+.searchbar i {
+  height: 1em;
+  width: 1em;
+  padding: 1.1em;
+  background-color: var(--inactive);
+  border-radius: 15px 0 0 15px;
+  text-align: center;
+}
+
+.champ {
+  height: 100%;
+  width: 13em;
+  font-weight: bold;
+  font-family: 'Raleway-Regular';
+  font-size: 1.1em;
+  padding-left: 1.2em;
+  border: 1px solid var(--inactive);
+  height: -moz-available;
+  height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+}
+
+.research-button{
+  background-color: var(--primary);
+  color: var(--background);
+  height: 100%;
+  font-weight: bold;
+  font-family: 'Raleway-Regular';
+  font-size: 1.1em;
+  border:none;
+  border-radius: 0px 15px 15px 0px;
+  margin-left: -0.3em;
+  padding: 0 1.1em;
+}
+
+.research-button i {
+  display: none;
+}
+
+/* -- Filtres -- */
+
+.filter {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin: 1.2em 0;
+}
+
+.filter p {
+  display: flex;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-right: 0.8em;
+}
+
+.filter ul {
+  padding: 0;
+}
+
+.filter li {
+  display: inline-block;
+  border: 2px solid var(--inactive);
+  border-radius: 100px; 
+  cursor:pointer; 
+  transition: all 0.2s  ease-in-out;
+  margin: 0.6em;
+}
+
+.filter li:hover {
+  transform: scale(1.03);
+  background-color: var(--inactive);
+}
+
+.nav_filter i {
+  height: 1.1em;
+  width: 1.1em;
+  font-size: 1.1em;
+  text-align: center;
+  background-color: var(--seconder);
+  padding: 0.8em;
+  border-radius: 100px;
+  color: var(--primary);
+}
+
+.filter_types span {
+  width: 100%;
+  padding: 0.8em;
+  font-size: 1.1em;
+} 
+
+.info {
+  display: flex;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.info p { 
+  margin-left: 0.5em;
+}
+
+.info i {
+  height: 1em;
+  width: 1em;
+  padding: 0.5em;
+  border: 2px solid var(--inactive);
+  border-radius: 100px;
+  color: var(--primary);
+  text-align: center;
+}
+
+/* -- Section Hebergements -- */
+
+#hebergements {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 2em 3.8em;
+}
+
+/* -- Hébergements à Marseille -- */
+
+.hebergements_marseille {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--inactive);
+  flex-wrap: wrap;
+  width: 62%;
+  padding: 0 1.2em 0 1.2em;
+  border-radius: 25px;
+}
+
+.hebergements_marseille h2 {
+  width: 100%;
+  margin: 1.3em 0 0.7em 0.8em;
+}
+
+.afficher_plus {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 1em 0 2em 0.8em;
+}
+
+.hebergement_carte {
+  background-color: var(--background);
+  max-width: 28%;
+  margin: 1em;
+  padding: 0.3em;
+  cursor:pointer; 
+  transition: all 0.2s  ease-in-out;
+  border-radius: 20px;
+  box-shadow: 0 0 0.6em rgba(0, 0, 0, 15%);
+}
+
+.hebergement_carte:hover{
+  transform: scale(1.03);
+  box-shadow: -1px 9px 15px rgba(0, 0, 0, 15%);
+}
+
+.hebergement_carte_img {
+  height: 7em;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 20px 20px 0px 0px ;
+  object-fit: cover;
+}
+
+.hebergement_carte h3 {
+  margin: 0.3em 0 0 0.5em;
+  font-size: 1.1em;
+}
+
+.hebergement_carte p {
+  padding: 0;
+  margin: 0.3em 0 0 0.5em;
+  font-size: 1em;
+}
+
+.star_icon {
+  margin: 0.4em 0 0.5em 0.5em;
+  color: var(--primary);
+}
+
+.star_icon_grey {
+  color: var(--inactive);
+}
+
+/* -- Hébergements Populaire -- */
+
+.hebergements_populaire {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--inactive);
+  flex-wrap: wrap;
+  max-width: 38%;
+  width: 30%;
+  padding: 0 1.2em 0 1.2em;
+  border-radius: 25px;
+}
+
+.hebergements_populaire_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+.hebergements_populaire h2 {
+  width: 100%;
+  margin: 1.3em 0 0.7em 0.8em; 
+} 
+
+.hebergements_populaire_title i {
+  font-size: 1.5em;
+  margin: 1.3em 0.8em 0.7em 0;
+}
+
+.hebergement_carte_populaire {
+  display: flex;
+  background-color: var(--background);
+  max-width: 100%;
+  height: 8.5em;
+  margin: 1em;
+  padding: 0.3em;
+  cursor:pointer; 
+  transition: all 0.2s  ease-in-out;
+  border-radius: 20px;
+  box-shadow: 0 0 0.6em rgba(0, 0, 0, 15%);
+}
+
+.hebergement_carte_populaire:hover {
+  transform: scale(1.03);
+  box-shadow: -1px 9px 15px rgba(0, 0, 0, 15%);
+}
+
+.hcp_left{
+  display: flex;
+  flex: 0.4;
+}
+
+.hcp_right{
+  display: flex;
+  flex:0.7;
+  flex-direction: column;
+  padding: 9px;
+}
+
+.hebergement_carte_populaire_img {
+  height: 8.5em;
+  width: 8.5em;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 20px 0 0 20px;
+  object-fit: cover;
+}
+
+.star_icon_populaire {
+  display: flex;
+  align-items: flex-end;
+  flex:1;
+  color: var(--primary);
+}
+
+.star_icon_populaire i {
+  margin: 0 0.1em;
+}
+
+/* -- Activités à Marseille -- */
+
+#activites {
+  max-width: 100%;
+  height: 100%;
+  margin: 3.5em 3.8em 7em 3.8em;
+  background-color: var(--background);
+}
+
+#activites h2 {
+  margin: 1.3em 0 0.9em 0.8em
+}
+
+.grille_activites a {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 0.9em rgba(0, 0, 0, 13%);
+  cursor:pointer; 
+  transition: all 0.2s  ease-in-out;
+}
+
+.grille_activites a:hover {
+  transform: scale(1.03);
+  box-shadow: -1px 9px 15px rgba(0, 0, 0, 15%);
+}
+
+.grille_activites img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.grille_activites h3 {
+  display: block;
+  padding: 1em;
+  box-shadow: 0 0 0.9em rgba(0, 0, 0, 13%);
+  border-radius: 0 0 20px 20px;
+  background-color: var(--background);
+}
+
+.grille_activites {
+  display: grid;
+  grid-template-columns: 23% 23% 23% 23%;
+  grid-gap: 2em;
+  grid-template-rows: 10rem 2rem 2rem 10rem;
+}
+
+.carte_vieux_port {
+  grid-column: 1/2;
+  grid-row: 1/5;
+}
+
+.carte_fort_de_pomegues {
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+
+.carte_ile_du_frioul {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+.carte_parc_national {
+  grid-column: 3/4;
+  grid-row: 1/5;
+}
+
+.carte_notre_dame {
+  grid-column: 4/5;
+  grid-row: 1/2;
+}
+
+.carte_parc_longchamp {
+  grid-column: 4/5;
+  grid-row: 3/5;
+}
+
+/* -- Footer -- */ 
+
+.footer {
+  display: flex;
+  max-width: 100%;
+  background-color: var(--inactive);
+}
+
+.footer nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin: 2.5em;
+}
+
+.footer h5 {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.footer li {
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  font-size: 1em;
+}
+
+.footer a:hover {
+ border-bottom: 2px solid black;
+}
+
+/* -- Responsive phone -- */
+
+@media screen and (max-width: 768px) {
+
+  body { 
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    font-size: 90%;
+  }
+
+  header {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .logo_nav {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    height: auto;
+  }
+
+  .logo_nav img {
+    display: flex;
+    align-items: flex-start;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 1em 0 1em 1.6em;
+  }
+
+  .logo_nav nav { 
+    max-width: 100%;
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+   .logo_nav a {
+     width: 100%;
+  }
+
+   .logo_nav span {
+     max-width: 100%;
+     width: auto;
+     height: 3em;
+  }
+
+  .nav_hebergement {
+    align-items: center;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin: 0;
+    border-top: none;
+    border-bottom: 0.2em solid var(--primary);
+  }
+
+  .nav_activites {
+    align-items: center;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin: 0;
+    border-top: none;
+    border-bottom: 0.2em solid var(--inactive);
+    padding-top: 0;
+  }
+
+  .nav_activites:hover {
+    border-top: none;
+    border-bottom: 0.2em solid var(--primary);
+    margin: 0;
+  }
+
+  .register{
+    display: none;
+  }
+
+  .register-media {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 90%;
+    color: var(--primary);
+    grid-column: 2/3;
+    grid-row: 1/2;
+    padding: 1em 1.6em 1em 0;
+  }
+
+  .second_header {
+    width: 100%;
+    height: auto;
+    margin: 2em 1em 1em 1em;
+  }
+
+  .searchbar {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .searchbar .champ {
+    max-width: 100%;
+    width: auto;
+  }
+  
+  .research-button span {
+    display: none;
+  }
+
+  .research-button i {
+    display: block;
+    color: var(--background);
+    background-color: var(--primary);
+    padding: 0;
+  }
+
+  .filter {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: normal;
+  }
+
+  .filter li { 
+    margin: 0.5em 0.5em 0.2em 0;
+  }
+
+  #hebergements {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .hebergements_populaire {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    margin: 0;
+    padding: 0 0 2em 0;
+  }
+
+  .hebergement_carte_populaire {
+    max-width: 100%;
+    margin-bottom: 0.5em;
+  }
+
+  .hcp_right {
+    width: 100%;
+    height: auto;
+    text-align: left;
+  }
+
+  .hcp_left {
+    flex: none;
+  }
+
+  .hebergements_marseille {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: auto;
+    background-color: var(--background);
+    padding: 0;
+    margin: 1em;
+  }
+
+  .hebergements_marseille h2 {
+    margin: 1em 0;
+  }
+
+  .afficher_plus {
+    font-size: 1.2em;
+    margin: 1em 0 0 0;
+  }
+
+  .hebergement_carte {
+    max-width: 100%;
+    width: auto;
+    margin: 1em 0;
+  }
+
+  .hebergement_carte img {
+    max-width: 100%;
+    width: 100%;
+    height: 9em;
+  }
+
+  #activites {
+    margin: 1em;
+  }
+
+  #activites h2 {
+    margin: 1.5em 0;
+  }
+
+  .grille_activites {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .grille_activites a {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .grille_activites img {
+   max-width: 100%;
+   height: 9em;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 100%;
+    height: 100%;
+    padding: 2em 1em 5em 1em;
+  }
+
+  .footer nav {
+    margin: 1em 0;
+  }
+
+}
+
+
+
