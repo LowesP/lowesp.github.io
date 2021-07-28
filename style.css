@@ -560,11 +560,11 @@ p {
     margin: 0;
   }
 
-   .logo_nav span {
+  .logo_nav span {
      max-width: 100%;
      width: 100%;
      height: 3em;
-  }
+  } 
 
   .logo_nav a {
     max-width: 100%;
@@ -597,9 +597,11 @@ p {
     margin: 0;
   }
 
-  .register {
+ .register {
     display: flex;
-    position: absolute; top: 0.8em; left: 10em;
+    position: absolute; top: 1.8em; right: 5%;
+    max-width: 8em !important;
+    height: auto;
     color: var(--primary);
   }
 
